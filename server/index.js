@@ -2,9 +2,12 @@ const bodyParser = require('body-parser')
 const fetch = require('node-fetch')
 const express = require('express')
 const mysql = require('mysql')
+var cors = require('cors')
 const app = express()
 const PORT = 3000
 const githubBaseUrl = 'https://api.github.com/'
+
+app.use(cors())
 
 app.use(bodyParser.json())
 

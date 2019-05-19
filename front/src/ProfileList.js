@@ -5,15 +5,15 @@ export default function RepoList({ profiles, removeProfile }) {
   return (
     <div style={styles.profilesContainer}>
       <div style={styles.cardContainer}>
-        <div style={styles.cardItem}>
-          {profiles.map((profile, index) => (
+        {profiles.map((profile, index) => (
+          <div style={styles.cardItem} data-card>
             <Profile
               key={profile.user.user_id}
               profile={profile}
               removeProfile={removeProfile}
             />
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </div>
   )
@@ -27,7 +27,7 @@ const styles = {
   },
   cardContainer: {
     display: 'flex',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     margin: '-1rem'
   },
   cardItem: {

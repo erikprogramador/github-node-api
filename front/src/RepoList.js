@@ -1,11 +1,13 @@
 import React from 'react'
 import Repo from './Repo'
 
-export default function RepoList() {
+export default function RepoList({ repositories }) {
   return (
     <>
       <div style={styles.main}>
-        <Repo />
+        {repositories.map(repo => (
+          <Repo key={repo.id} repository={repo} />
+        ))}
       </div>
     </>
   )

@@ -6,5 +6,7 @@
 
 ## Front
 
+- Add alert when profile is visible
+- Ad alert when server return a error
 - Show main language
 - Show percentage of language usage

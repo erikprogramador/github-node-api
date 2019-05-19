@@ -1,12 +1,18 @@
 import React from 'react'
 import Profile from './Profile'
 
-export default function RepoList() {
+export default function RepoList({ profiles, removeProfile }) {
   return (
     <div style={styles.profilesContainer}>
       <div style={styles.cardContainer}>
         <div style={styles.cardItem}>
-          <Profile />
+          {profiles.map((profile, index) => (
+            <Profile
+              key={profile.user.user_id}
+              profile={profile}
+              removeProfile={removeProfile}
+            />
+          ))}
         </div>
       </div>
     </div>
@@ -25,8 +31,7 @@ const styles = {
     margin: '-1rem'
   },
   cardItem: {
-    width: '30%',
-    minWidth: '375px',
-    margin: '1rem'
+    width: '375px',
+    margin: '0 1rem'
   }
 }

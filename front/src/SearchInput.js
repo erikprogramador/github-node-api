@@ -1,11 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-export default function SearchInput() {
+export default function SearchInput({ loadFrom, loadAll }) {
+  const [search, setSearch] = useState('')
   return (
     <>
       <div style={styles.formContainer}>
-        <form style={styles.searchInput}>
+        <form
+          style={styles.searchInput}
+          onSubmit={evt => {
+            evt.preventDefault()
+            loadFrom(search)
+            setSearch('')
+          }}
+        >
           <input
+            value={search}
+            onChange={({ target: { value } }) => setSearch(value)}
             style={styles.input}
             type="search"
             name="q"
@@ -18,7 +28,9 @@ export default function SearchInput() {
           </button>
         </form>
 
-        <button style={styles.allRecords}>All Recorded Users</button>
+        <button onClick={loadAll} style={styles.allRecords}>
+          All Recorded Users
+        </button>
       </div>
     </>
   )

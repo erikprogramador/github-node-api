@@ -1,26 +1,29 @@
 import React from 'react'
 
-export default function Repo() {
+export default function Repo({ repository }) {
   return (
     <div style={styles.body}>
-      <a href="#" style={styles.title}>
-        BusX <small style={styles.urlName}>erikprogramador/busx</small>
+      <a href={repository.url} style={styles.title}>
+        {repository.name}{' '}
+        <small style={styles.urlName}>{repository.url_name}</small>
       </a>
+
+      <p>{repository.description}</p>
 
       <div style={styles.infos}>
         <div style={styles.info}>
-          <i class="mdi mdi-eye-outline" style={styles.infoIcon} />
-          <span style={styles.infoLabel}>4</span>
+          <i className="mdi mdi-eye-outline" style={styles.infoIcon} />
+          <span style={styles.infoLabel}>{repository.watchers}</span>
         </div>
 
         <div style={styles.info}>
-          <i class="mdi mdi-star-outline" style={styles.infoIcon} />
-          <span style={styles.infoLabel}>4</span>
+          <i className="mdi mdi-star-outline" style={styles.infoIcon} />
+          <span style={styles.infoLabel}>{repository.stars}</span>
         </div>
 
         <div style={styles.info}>
-          <i class="mdi mdi-earth" style={styles.infoIcon} />
-          <span style={styles.infoLabel}>4</span>
+          <i className="mdi mdi-earth" style={styles.infoIcon} />
+          <span style={styles.infoLabel}>{repository.language}</span>
         </div>
       </div>
     </div>

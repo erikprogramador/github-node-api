@@ -1,29 +1,29 @@
 import React from 'react'
 
-export default function Information() {
+export default function Information({ user }) {
   return (
     <div style={styles.main}>
       <div style={styles.block}>
-        <i class="mdi mdi-folder-network-outline" style={styles.icon} />
-        <span style={styles.label}>200</span>
+        <i className="mdi mdi-folder-network-outline" style={styles.icon} />
+        <span style={styles.label}>{user.repositories_count}</span>
       </div>
 
       <div style={styles.block}>
-        <i class="mdi mdi-file-document-box-outline" style={styles.icon} />
-        <span style={styles.label}>10</span>
+        <i className="mdi mdi-file-document-box-outline" style={styles.icon} />
+        <span style={styles.label}>{user.gists_count}</span>
       </div>
 
       <div style={styles.block}>
         <i
-          class="mdi mdi-account-badge-horizontal-outline"
+          className="mdi mdi-account-badge-horizontal-outline"
           style={styles.icon}
         />
-        <span style={styles.label}>200</span>
+        <span style={styles.label}>{user.following_count}</span>
       </div>
 
       <div style={styles.block}>
-        <i class="mdi mdi-eye-outline" style={styles.icon} />
-        <span style={styles.label}>15,000</span>
+        <i className="mdi mdi-eye-outline" style={styles.icon} />
+        <span style={styles.label}>{user.followers_count}</span>
       </div>
     </div>
   )

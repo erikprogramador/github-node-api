@@ -60,7 +60,7 @@ const styles = {
     width: '100%'
   },
   title: {
-    fontSize: '1.175rem',
+    fontSize: '1.1rem',
     fontWeight: '500',
     color: 'var(--primary)',
     width: '100%',

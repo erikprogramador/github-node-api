@@ -238,7 +238,8 @@ app.get('/usuarios', async function(req, res) {
       user_informations.followers as followers_count,
       user_informations.following as following_count
   FROM users
-    INNER JOIN user_informations ON user_informations.user_id = users.id`
+    INNER JOIN user_informations ON user_informations.user_id = users.id
+    ORDER BY user_informations.repositories DESC`
 
   const connection = await connect()
 

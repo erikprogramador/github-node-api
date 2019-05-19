@@ -13,7 +13,7 @@ export default function Profile({ profile, removeProfile }) {
         />
 
         <div style={styles.infoBlock}>
-          <a href={profile.user.url} style={styles.title}>
+          <a href={profile.user.url} target="_blank" style={styles.title}>
             {profile.user.name}
           </a>
 

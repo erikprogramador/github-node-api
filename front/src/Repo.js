@@ -3,7 +3,7 @@ import React from 'react'
 export default function Repo({ repository }) {
   return (
     <div style={styles.body}>
-      <a href={repository.url} style={styles.title}>
+      <a href={repository.url} target="_blank" style={styles.title}>
         {repository.name}{' '}
         <small style={styles.urlName}>{repository.url_name}</small>
       </a>
